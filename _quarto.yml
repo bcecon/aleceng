@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: "."
+  
+website:
+  title: "DANL 310"
+  page-footer: "Copyright 2023, Alec Eng" 
+  reader-mode: false
+  navbar:
+    pinned: true
+    left:
+      - text: project
+        href: project-website.qmd
+format:
+  html:
+    theme:
+      light: flatly
+      dark: [darkly, theme-dark-cosmo.scss]
+    # mainfont: Georgia, serif;
+    css: styles.css
+    mainfont: Gill Sans, sans-serif;
+    toc: true
+    include-after-body: target_blank.html

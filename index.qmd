@@ -1,0 +1,31 @@
+---
+title: "Alec Eng" 
+about:
+  template: solana
+  image: img/logo.png
+  links:
+    - text: GitHub
+      icon: github
+      href: https://github.com/YOUR_GITHUB
+    - text: LinkedIn
+      icon: linkedin
+      href: https://www.linkedin.com/in/YOUR_LINKEDIN/
+    - text: Twitter
+      icon: twitter
+      href: https://twitter.com/YOUR_SOCIAL_MEDIA
+    - text: Email
+      icon: envelope
+      href: mailto:aje7@geneseo.edu
+    - text: Résumé
+      icon: file-pd
+      href: https://YOUR_GITHUB.github.io/YOUR_RESUME.pdf
+---
+
+
+I am Alec. I am awesome!
+
+
+## Education
+
+**State University of New York at Geneseo**, 2023<br>
+- B.A. in Accounting<br>

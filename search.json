@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Alec Eng",
+    "section": "",
+    "text": "I am Alec. I am awesome!"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Alec Eng",
+    "section": "Education",
+    "text": "Education\nState University of New York at Geneseo, 2023 - B.A. in Accounting"
+  },
+  {
+    "objectID": "project-website.html#creating-the-model-in-python",
+    "href": "project-website.html#creating-the-model-in-python",
+    "title": "NCAA Basketball Regression",
+    "section": "Creating the model in Python",
+    "text": "Creating the model in Python\nThe first step is loading the dataset and the required packages\n\n\nCode\nlibrary(readxl)\ndf <- read_excel(\"danl310df.xlsx\")\n\n\n\n\nCode\nimport pandas as pd\nimport numpy as np\nimport statsmodels.api as sm\n\n\nThe packages that are used to create the model are numpy, pandas, and statsmodels.apu Next we pull the variables that will be used in the regression.\n\n\nCode\ndata=pd.read_excel(\"danl310df.xlsx\")\ncbb_data=data.copy()\ncbb = cbb_data[[ \"W\", \"ADJOE\", \"ADJDE\", \"EFG_O\", \"EFG_D\", \"TOR\", \"TORD\", \"2P_O\",\"2P_D\", \"3P_O\",\"3P_D\", \"SEED\", \"WAB\" ]]\ncbb\n\n\n     W  ADJOE  ADJDE  EFG_O  EFG_D   TOR  ...  2P_O  2P_D  3P_O  3P_D  SEED   WAB\n0   29  121.0   89.7   54.7   44.0  19.3  ...  52.0  43.2  40.3  30.4     1   7.8\n1   31  118.9   90.2   54.9   44.9  17.2  ...  55.0  42.1  36.5  32.9     1   7.6\n2   31  111.6   86.2   53.3   41.5  20.3  ...  52.9  39.3  36.4  30.3     1   7.5\n3   35  115.9   84.5   50.6   44.8  18.3  ...  50.8  43.4  33.3  31.8     1   9.0\n4   25  107.6   85.0   51.1   43.0  20.1  ...  50.2  41.4  35.3  30.7     2   6.6\n..  ..    ...    ...    ...    ...   ...  ...   ...   ...   ...   ...   ...   ...\n63  19   90.6   95.7   45.7   45.2  22.7  ...  45.4  43.4  30.7  32.0    16 -11.5\n64  20   95.9   96.7   49.1   41.9  16.8  ...  46.0  40.5  36.7  30.0    16  -5.7\n65  20  108.1  111.2   54.4   52.6  20.3  ...  53.1  51.1  38.0  37.2    16  -8.6\n66  21   98.5   99.4   47.6   48.7  17.2  ...  46.2  46.9  33.6  34.7    16  -8.9\n67  12  100.1  109.7   48.5   47.8  19.8  ...  44.9  48.6  37.0  30.9    16 -15.6\n\n[68 rows x 13 columns]\n\n\nWe then split the features and the labels into different datasets using the .drop function\n\n\nCode\ncbb_features=cbb.drop(\"SEED\", axis=\"columns\")\ncbb_labels=cbb[\"SEED\"]\n\n\n\nLinear Regression Model\nFor the linear regression model we use scikit-learn software to train the machine learning model.\n\n\nCode\nfrom sklearn.linear_model import LinearRegression\nlin_reg=LinearRegression()\nlin_reg.fit(cbb_features, cbb_labels)\n\n\nLinearRegression()\n\n\n\n\nDecision Tree Model\nWe also use the scikit-learn software for the dicision tree regression\nThe following code is training the model:\n\n\nCode\nfrom sklearn.tree import DecisionTreeRegressor\ntree_reg=DecisionTreeRegressor()\ntree_reg.fit(cbb_features, cbb_labels)\n\n\nDecisionTreeRegressor()\n\n\n\n\nRandom Forest Model\nTraining the random forest model:\n\n\nCode\nfrom sklearn.ensemble import RandomForestRegressor\nforest_reg=RandomForestRegressor()\nforest_reg.fit(cbb_features,cbb_labels)\n\n\nRandomForestRegressor()"
+  }
+]
